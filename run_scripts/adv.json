@@ -1,0 +1,16 @@
+{
+  "job_name": "adv_training",
+  "setup_script": "run_scripts/setup.sh",
+  "entry_point": "main.py",
+  "partition": "scavenger",
+  "qos": "default",
+  "cpus_per_task": 10,
+  "memory": "16GB",
+  "gpus_per_task": 2,
+  "time": "2500m",
+  "args": [
+    ["data_root", ["/vulcan/scratch/yogesh22/data/CIFAR"]],
+    ["alg", ["clean", "adv_training"]],
+    ["save_path", ["results"]]
+  ]
+}
