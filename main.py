@@ -7,10 +7,14 @@ import os
 
 def parse_args():
     parser = argparse.ArgumentParser(description='PyTorch WideResNet Training')
-    parser.add_argument('--cfg_path', default='configs.json', type=str,
+    parser.add_argument('--cfg_path', default='config.json', type=str,
                         help='path to config file')
+    parser.add_argument('--data_root', default='../data', type=str,
+                        help='path to dataset')
     parser.add_argument('--alg', default='clean', type=str,
                         help='Algorithm to train | Clean / Adv')
+    parser.add_argument('--save_path', default='results', type=str,
+                        help='path to save file')
     args = parser.parse_args()
     return args
 

@@ -4,10 +4,10 @@
   "entry_point": "main.py",
   "partition": "scavenger",
   "qos": "default",
-  "cpus_per_task": 10,
-  "memory": "16GB",
+  "cpus_per_task": 5,
+  "memory": "12GB",
   "gpus_per_task": 2,
-  "time": "2500m",
+  "time": "2000m",
   "args": [
     ["data_root", ["/vulcan/scratch/yogesh22/data/CIFAR"]],
     ["alg", ["clean", "adv_training"]],
