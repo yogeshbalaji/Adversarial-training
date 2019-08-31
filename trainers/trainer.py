@@ -120,6 +120,7 @@ class Trainer:
                 # measure accuracy and record loss
                 losses.update(loss.data.item(), input.size(0))
 
+            self.epoch += 1
             self.lr_scheduler.step()
             end_time = time.time()
             batch_time = end_time - start_time
