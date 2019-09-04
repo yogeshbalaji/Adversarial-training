@@ -9,6 +9,7 @@
   "gpus_per_task": 2,
   "time": "2000m",
   "args": [
+    ["cfg_path", ["configs/train.json"]],
     ["data_root", ["/vulcan/scratch/yogesh22/data/CIFAR"]],
     ["alg", ["clean", "adv_training"]],
     ["save_path", ["results"]]

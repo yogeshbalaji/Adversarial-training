@@ -1,0 +1,19 @@
+{
+  "job_name": "adv_training_eval",
+  "setup_script": "run_scripts/setup.sh",
+  "entry_point": "main.py",
+  "partition": "scavenger",
+  "qos": "default",
+  "cpus_per_task": 5,
+  "memory": "12GB",
+  "gpus_per_task": 2,
+  "time": "2000m",
+  "args": [
+    ["cfg_path", ["configs/eval.json"]],
+    ["data_root", ["/vulcan/scratch/yogesh22/data/CIFAR"]],
+    ["alg", ["adv_training"]],
+    ["save_path", ["results"]],
+    ["attack_steps", [0, 10, 30, 100, 200, 500, 1000]],
+    ["restore", ["/vulcan/scratch/yogesh22/Adversarial-training/results/train/adv_training/checkpoint.pth"]]
+  ]
+}

@@ -8,7 +8,7 @@ class PGDAttacker(object):
     def __init__(self, attack_eps):
         self.attack_eps = attack_eps
 
-    def attack(self, x, y, net, attack_steps, attack_lr, random_init=True, target=None):
+    def attack(self, x, y, net, attack_steps, attack_lr, random_init=True, target=None, clamp=(0, 1)):
         """
         :param x: Inputs to perturb
         :param y: Corresponding ground-truth labels
@@ -52,6 +52,7 @@ class PGDAttacker(object):
             # Projection
             x_adv = x + torch.clamp(x_adv - x, min=-self.attack_eps, max=self.attack_eps)
             x_adv = x_adv.detach()
+            x_adv = torch.clamp(x_adv, *clamp)
 
         return x_adv
 
