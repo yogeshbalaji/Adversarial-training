@@ -4,7 +4,7 @@
   "model_width": 10,
   "alg": "clean",
 
-  "batch_size": 256,
+  "batch_size": 10,
   "save_path": "results",
   "restore": false,
 
